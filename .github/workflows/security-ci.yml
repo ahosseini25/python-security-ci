@@ -32,6 +32,11 @@ jobs:
         continue-on-error: true
         run: safety check --full-report
 
+      - name: Run Bandit scan
+        run: bandit -r .
+        continue-on-error: true
+
+
       - name: Run Bandit (static security analysis)
         continue-on-error: true
         run: bandit -r .
